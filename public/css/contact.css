@@ -1,3 +1,16 @@
 body {
-    background-color: blue;
+    background-color: rgb(208, 208, 214);
+}
+
+#contactForm {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 20px;
+}
+
+.alert {
+    display: none;
+}
+
+.alert small {
+    font-weight: bold;
 }
