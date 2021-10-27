@@ -1,5 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Baloo+Da+2&family=Noto+Serif&family=PT+Sans&display=swap');
 
+/* logged in username */
+.nav-item a#navbarDropdown {
+  background-color: #2C2C96;
+  border-radius: 5px;
+  color: white;
+}
+
 /* Header css  */
 
 .logo {

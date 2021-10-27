@@ -80,5 +80,4 @@
 @section('js')
     <script type="text/javascript" src="{{ asset('js/login.js') }} "></script>
 @endsection
-
 @endsection

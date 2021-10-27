@@ -28,10 +28,12 @@
     
     <div id="app">
         @include('layouts.header')
-        {{-- @include('views.index') --}}
-       {{-- @yield('content') --}}
+
+            <div class="container">
+                @yield('content')
+            </div>
        
- @include('layouts.footer')       
+         @include('layouts.footer')       
     </div>
 
 </body>

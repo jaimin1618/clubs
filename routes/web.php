@@ -17,11 +17,12 @@ use App\Http\Controllers\ContactController;
 */
 
 // HOME ROUTES
-Route::get('/', [HomeController::class, 'index']);
+// Route::get('/', [HomeController::class, 'index']);
 
 // AUTH ROUTES
 Auth::routes();
-Route::get('/', [HomeController::class, 'index'])->name('home');
+// Auth::routes(['verify' => true]);
+Route::get('/', [HomeController::class, 'index'])->name('index');
 
 // EVENT ROUTES
 Route::get('/events', [EventsController::class, 'index'])->name('events');

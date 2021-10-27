@@ -10,13 +10,13 @@
         <div class="collapse navbar-collapse " id="navbarNavDropdown">
           <ul class="navbar-nav">
             <li class="nav-item">
-              <a class="nav-link" href="#" id = "header-link">Home </a>
+              <a class="nav-link" href="{{ route('index') }}" id = "header-link">Home </a>
             </li>
             <li class="nav-item" >
-              <a class="nav-link" href="#" id= "header-link" >Events</a>
+              <a class="nav-link" href="{{ route('events') }}" id= "header-link" >Events</a>
             </li>
              <li class="nav-item" >
-              <a class="nav-link" href="#" id= "header-link">About Us</a>
+              <a class="nav-link" href="{{ route('contact') }}" id= "header-link">Contact Us</a>
             </li>
           </ul>
       
@@ -31,13 +31,13 @@
                     @guest
                         @if (Route::has('login'))
                             <li class="nav-item" class="collapse navbar-collapse"  aria-expanded="true"  style="margin-right:2rem;">
-                                <button class="nav-links" style="background-color:#2C2C96;color:white; border-radius:5px; padding:6px 9px; border:none;" href="{{ route('login') }}">{{ __('Login') }}</button>
+                                <a class="nav-links" style="background-color:#2C2C96;color:white; border-radius:5px; padding:6px 9px; border:none;" href="{{ route('login') }}">Login</a>
                             </li>
-                        @endif.
+                        @endif
 
                         @if (Route::has('register'))
                             <li class="nav-item" class="collapse navbar-collapse"   aria-expanded="true"  data-toggle="collapse">
-                                <button class="nav-links" style=" background-color:#2C2C96;border:none; color:white;  padding:6px 9px; border-radius:5px;   " href="{{ route('register') }}">{{ __('Register') }}</button>
+                                <a class="nav-links" style=" background-color:#2C2C96;border:none; color:white;  padding:6px 9px; border-radius:5px;   " href="{{ route('register') }}">{{ __('Register') }}</a>
                             </li>
                         @endif
                     @else
