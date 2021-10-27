@@ -28,9 +28,10 @@
     
     <div id="app">
         @include('layouts.header')
-        <main class="py-4">
-            @yield('content')
-        </main>
+        {{-- @include('views.index') --}}
+       {{-- @yield('content') --}}
+       
+ @include('layouts.footer')       
     </div>
 
 </body>
