@@ -1,5 +1,9 @@
 @extends('layouts.app')
 
+@section('css')
+    <link rel="stylesheet" href="{{ asset('css/login.css') }}">
+@endsection
+
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
@@ -70,4 +74,9 @@
         </div>
     </div>
 </div>
+
+@section('js')
+    <script type="text/javascript" src="{{ asset('js/login.js') }} "></script>
+@endsection
+
 @endsection

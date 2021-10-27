@@ -1,5 +1,11 @@
 @extends('layouts.app')
 
+@section('title', 'Home')    
+
+@section('css') 
+    <link rel="stylesheet" href="{{ asset('css/index.css') }}">
+@endsection
+
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
@@ -20,4 +26,9 @@
         </div>
     </div>
 </div>
+
+@section('js')
+    <script type="text/javascript" src={{ asset('js/index.js') }}></script>
+@endsection
+
 @endsection

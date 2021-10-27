@@ -1,0 +1,11 @@
+authentication pages:
+    login
+    register
+
+main pages:
+    GET
+    Home (/:R) => robocon (/clubs/id:R)
+    Events page (/events:R)
+    
+    POST
+    Contactus (/contact:C)
