@@ -10,7 +10,7 @@ Route::get('/', [HomeController::class, 'index'])->name('index');
 Route::get('clubs/{id}', [HomeController::class, 'get_data'])->name('index.show');
 
 // AUTH ROUTES
-Auth::routes();
+Auth::routes(['verify' => true]);
 
 // EVENT ROUTES
 Route::get('events', [EventsController::class, 'index'])->name('events');
