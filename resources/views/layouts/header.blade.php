@@ -2,7 +2,7 @@
 <header>
         <nav class="navbar navbar-expand-lg navbar-light"style="background-color:white;padding:1.3rem; font-size:1.1rem; border-bottom:1.6px solid #E5E7EB; z-index:1;">
       
-        <img src="/images/clubLogo.png" alt="logo" class="logo"> 
+        <img src="/images/logo/clubLogo.png" alt="logo" class="logo"> 
 
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>

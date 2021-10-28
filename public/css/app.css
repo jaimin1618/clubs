@@ -44,7 +44,7 @@
 /* Footer Main */
 
 footer .main-footer {
-  position: absolute;
+  position: relative;
   bottom: 0;
   padding: 10px 0;
   background: #222635;

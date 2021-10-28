@@ -19,12 +19,12 @@
 
             <div class="form-group">
             <label for="name">Name</label>
-            <input type="text" class="form-control" id="name" placeholder="Jane Doe" name="name" value="{{ Auth::user()->name }}">
+            <input type="text" class="form-control" id="name" placeholder="Jane Doe" name="name" value="@auth {{ (Auth::user()->name) }} @endauth">
             <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
             </div>
             <div class="form-group">
             <label for="email">Email address</label>
-            <input type="email" class="form-control" id="email" placeholder="abc@xyz.com" name="email" value="{{ Auth::user()->email }}">
+            <input type="email" class="form-control" id="email" placeholder="abc@xyz.com" name="email" value="@auth {{ Auth::user()->email }} @endauth">
             </div>
             <div class="form-group">
             <label for="message">Message</label>

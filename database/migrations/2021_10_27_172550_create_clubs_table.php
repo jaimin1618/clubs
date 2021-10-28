@@ -18,6 +18,7 @@ class CreateClubsTable extends Migration
             $table->string('clubName')->notNull;
             $table->string('website')->nullable();
             $table->string('images', 150);
+            $table->string('logo');
             $table->text('description');
         });
     }

@@ -1,4 +1,4 @@
-$(document).ready(() => { // console.log('index.js ready!');
+$(() => { // console.log('index.js ready!');
 
     // functions;
     $.fn.ajaxConfig = () => {
@@ -9,26 +9,41 @@ $(document).ready(() => { // console.log('index.js ready!');
         });    
     } 
 
+    $.fn.renderClub = ({id, clubName, logo}) => {
+        $('.allClubs').append(
+            `
+                <div class="card col-mg-4" data-key="${id}">
+                    <img src="/images/logo/${logo}" class="card-img-top" alt="${clubName}">
+                    <div class="card-body">
+                        <h5 class="card-title">${clubName}</h5>
+                        <a href="/clubs/${id}" class="btn btn-info">View more</a>
+                    </div>
+                </div>
+            `
+        );
+    }
+
     $.fn.allClubs = () => {
         $.ajax({
             url: `clubs/0`,
             type: 'GET',
             dataType: 'json',
-            success: (data) => {
-                console.log(data);
+            success: (data) => { // console.log(data);
+
+                $.each(data, (i, item) => {
+                    $.fn.renderClub(item);
+                });
+
             },
-            complete: () => {
-                console.log('fetch done!');
+            error: (err) => {
+                $('#dataNotFound').css('display', 'block');
             }
-        })
+        });
     }
-
-
 
 
     // run functions
     $.fn.ajaxConfig();
     $.fn.allClubs();
 
-
-});
+}); // DOMLoaded
