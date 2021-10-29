@@ -1,8 +1,8 @@
 @extends('layouts.app')
 
-@section('title', 'Home')    
+@section('title', 'Home')
 
-@section('css') 
+@section('css')
     <link rel="stylesheet" href="{{ asset('css/index.css') }}">
 @endsection
 
@@ -12,7 +12,7 @@
     <small>Sorry! We couldn't find clubs due to some internal technical error</small>
 </div>
 
-<div class="row allClubs"> 
+<div class="row allClubs">
 
     {{-- SHOW CLUBS DATA HERE --}}
 

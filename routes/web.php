@@ -7,7 +7,9 @@ use App\Http\Controllers\ContactController;
 
 // HOME ROUTES
 Route::get('/', [HomeController::class, 'index'])->name('index');
-Route::get('clubs/{id}', [HomeController::class, 'get_data'])->name('index.show');
+Route::get('clubs', [HomeController::class, 'get_data'])->name('index.show');
+Route::get('clubs/{id}', [HomeController::class, 'club_data'])->name('index.club');
+Route::get('get_club/{id}', [HomeController::class, 'show_club'])->name('index.get_club');
 
 // AUTH ROUTES
 Auth::routes(['verify' => true]);
@@ -19,3 +21,4 @@ Route::get('events', [EventsController::class, 'index'])->name('events');
 // CONTACT ROUTES
 Route::get('contact', [ContactController::class, 'index'])->name('contact');
 Route::post('contact', [ContactController::class, 'create'])->name('contact.store');
+

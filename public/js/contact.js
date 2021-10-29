@@ -7,8 +7,8 @@ $(document).ready(() => {
             headers: {
                 'X-CSRF-Token': $('meta[name="csrf-token"]').attr('content')
            }
-        });    
-    } 
+        });
+    }
 
     $.fn.storeMessage = (message) => {
         let msg = {};
@@ -26,7 +26,7 @@ $(document).ready(() => {
                 if (!status) {
                     msg = "<strong>Error!</strong> Your message hasn't been sent";
                     show_status = 'danger';
-                } 
+                }
 
                 $('#status').prepend(
                     `<div class="alert alert-${show_status} alert-dismissible fade show" role="alert">
@@ -73,7 +73,7 @@ $(document).ready(() => {
 
 
     // run functions
-    $.fn.ajaxConfig();   
+    $.fn.ajaxConfig();
 
     $('#contactSubmit').on('click', (e) => { e.preventDefault();
         let form = $('#contactForm')[0];

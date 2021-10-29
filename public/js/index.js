@@ -6,8 +6,8 @@ $(() => { // console.log('index.js ready!');
             headers: {
                 'X-CSRF-Token': $('meta[name="csrf-token"]').attr('content')
            }
-        });    
-    } 
+        });
+    }
 
     $.fn.renderClub = ({id, clubName, logo}) => {
         $('.allClubs').append(
@@ -16,7 +16,7 @@ $(() => { // console.log('index.js ready!');
                     <img src="/images/logo/${logo}" class="card-img-top" alt="${clubName}">
                     <div class="card-body">
                         <h5 class="card-title">${clubName}</h5>
-                        <a href="/clubs/${id}" class="btn btn-info">View more</a>
+                        <a href="/clubs/${id}" class="btn btn-info" data-key="${id}">View more</a>
                     </div>
                 </div>
             `
@@ -25,15 +25,17 @@ $(() => { // console.log('index.js ready!');
 
     $.fn.allClubs = () => {
         $.ajax({
-            url: `clubs/0`,
+            url: `clubs`,
             type: 'GET',
             dataType: 'json',
             success: (data) => { // console.log(data);
-
-                $.each(data, (i, item) => {
-                    $.fn.renderClub(item);
-                });
-
+                if (data.length > 0) {
+                    $.each(data, (i, item) => {
+                        $.fn.renderClub(item);
+                    });
+                } else {
+                    $('#dataNotFound').css('display', 'block');
+                }
             },
             error: (err) => {
                 $('#dataNotFound').css('display', 'block');
@@ -41,9 +43,15 @@ $(() => { // console.log('index.js ready!');
         });
     }
 
-
     // run functions
     $.fn.ajaxConfig();
     $.fn.allClubs();
+    
+    $(document).on('click', '.btn-info', (e) => {
+        let id = $(e.target).data('key');
+        console.log(id);
+
+        window.location.href = '/clubs/' + id;
+    });
 
 }); // DOMLoaded
