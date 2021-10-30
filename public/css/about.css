@@ -1,0 +1,7 @@
+.row{
+    margin: 2rem 0rem;
+}
+.social-icons{
+    justify-content: space-evenly;
+    margin-bottom: 0.5rem;
+}

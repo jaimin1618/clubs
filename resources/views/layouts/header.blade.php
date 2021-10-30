@@ -15,11 +15,21 @@
             <li class="nav-item" >
               <a class="nav-link" href="{{ route('events') }}" id= "header-link" >Events</a>
             </li>
-             <li class="nav-item" >
-              <a class="nav-link" href="{{ route('contact') }}" id= "header-link">Contact Us</a>
+            <li class="nav-item" >
+              <a class="nav-link" href="{{ route('about') }}" id= "header-link">About-us</a>
             </li>
+            <li class="nav-item" >
+              <a class="nav-link" href="{{ route('contact') }}" id= "header-link">Contact-us</a>
+            </li>
+            @auth
+                @if (Auth()->user()->role == config('constants.ADMIN_ROLE') || Auth()->user()->role == config('constants.SUPER_ADMIN_ROLE')) 
+                <li class="nav-item" >
+                  <a class="nav-link" href="{{ route('admin.form') }}" id= "header-link">Add Event</a>
+                </li>
+              @endif
+            @endauth
+          
           </ul>
-      
         </div>   
         
 

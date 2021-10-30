@@ -10,4 +10,8 @@ class EventsController extends Controller {
         return view('events');
     }
 
+    function addEvent (Request $req) {
+        return json_encode($req->all()->get());
+    }
+
 }

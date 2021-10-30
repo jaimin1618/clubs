@@ -1,67 +1,82 @@
 .adminForm {
-    background-color: whitesmoke;
-    border-radius: 0.8rem;
-  }
-  
-  .container-fluid {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
+  background-color: whitesmoke;
+  border-radius: 0.8rem;
+}
+
+.container-fluid {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.adminForm {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  padding: 0.8rem 1.5rem 2.5rem 2.5rem;
+  /* border-radius: 0.6rem; */
+  width: 60%;
+  background-color: #f8f4e5;
+  color: rgb(22, 21, 21);
+  font-weight: bolder;
+  font-size: 1.3em;
+  border-top: 6px solid #f45702;
+}
+.adminForm input {
+  border-radius: 0.5em;
+}
+
+.eventposter {
+  width: 100%;
+}
+
+.location input{
+  outline: none;
+  border: none;
+  width: 80%;
+  margin-right:1rem;
+  border: 1px solid #ced4da;
+
+}
+.location {
+display: flex;
+width: 100%;
+justify-content:space-between;
+margin-left:1rem ;
+align-items:center;
+}
+
+.submit > button {
+  display: block;
+  float: right;
+  line-height: 2em;
+  padding: 0 20px;
+  border: none;
+  background: #f45702;
+  color: white;
+  letter-spacing: 2px;
+  transition: 0.2s all ease-in-out;
+  border-bottom: 2px solid transparent;
+  outline: none;
+  /* font-size: 1.2em; */
+}
+
+.submit > button:hover {
+  background: white;
+  color: #f45702;
+  border-bottom: 2px solid #f45702;
+  transition: white 5000s ease-in-out 5s;
+  /* border: 2px solid black; */
+}
+
+#inlineRadio1,
+#inlineRadio2,
+#eventposter {
+  border: none;
+  outline: none;
+}
+
+@media screen and (max-width: 768px) {
   .adminForm {
-    margin-top: 2rem;
-    margin-bottom: 2rem;
-    padding: 0.8rem 1.5rem 2.5rem 2.5rem;
-    /* border-radius: 0.6rem; */
-    width: 60%;
-    background-color: #f8f4e5;
-    color: rgb(22, 21, 21);
-    font-weight: bolder;
-    font-size: 1.3em;
-    border-top: 6px solid #f45702;
-  }
-  .adminForm input {
-    border-radius: 0.5em;
-  }
-  
-  .eventposter {
-    width: 100%;
-  }
-  
-  .submit > button {
-    display: block;
-    float: right;
-    line-height: 2em;
-    padding: 0 20px;
-    border: none;
-    background: #f45702;
-    color: white;
-    letter-spacing: 2px;
-    transition: 0.2s all ease-in-out;
-    border-bottom: 2px solid transparent;
-    outline: none;
-    /* font-size: 1.2em; */
-  }
-  
-   .submit > button:hover{
-    background: white;
-    color: #f45702;
-    border-bottom: 2px solid #f45702;
-    transition: white 5000s ease-in-out 5s;
-    /* border: 2px solid black; */
-  }
-  
-  #inlineRadio1,
-  #inlineRadio2,
-  #eventposter {
-    border: none;
-    outline: none;
-  }
-  
-  @media screen and (max-width: 768px) {
-    .adminForm {
       padding: 0.3rem 7.4rem auto 2rem;
       width: 90%;
-    }
   }
-  
+}

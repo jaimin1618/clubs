@@ -1,3 +1,68 @@
-body {
-    background-color: green;
+body{
+    background-color: rgb(129, 188, 206);
+}
+
+#caro-indicators * {
+    border-radius: 5rem;
+    display: none;
+  }
+
+.event{
+    background-color: rgb(255, 255, 255);
+    display: flex;
+    padding:3rem;
+    width: 100%;
+    border-top-right-radius:3rem;
+    border-bottom-right-radius:3rem;
+    margin-top: 3rem;
+    margin-bottom:3rem;
+    box-shadow: 10px 10px 10px 0px rgba(170,152,152,0.84);
+    -webkit-box-shadow: 10px 10px 10px 0px rgba(170,152,152,0.84);
+    -moz-box-shadow: 10px 10px 10px 0px rgba(170,152,152,0.84);
+}
+
+.event-logo img{
+    border-radius: 50%;
+}
+
+.jaimin{
+    display: flex;
+}
+
+.submit > button {
+    display: block;
+    float: right;
+    line-height: 2em;
+    padding: 0 20px;
+    border: none;
+    background: #f45702;
+    color: white;
+    letter-spacing: 2px;
+    transition: 0.2s all ease-in-out;
+    border-bottom: 2px solid transparent;
+    outline: none;
+    width:60%;
+    /* font-size: 1.2em; */
+}
+
+.submit > button:hover {
+    font-weight: bolder;
+    background: white;
+    color: #f45702;
+    border-bottom: 2px solid #f45702;
+    transition: white 5000s ease-in-out 5s;
+    /* border: 2px solid black; */
+}
+
+@media screen and (max-width:415px) {
+    .event{
+        width: 80%;
+    }
+}
+@media screen and (max-width:992px) {
+    .greed{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
 }
