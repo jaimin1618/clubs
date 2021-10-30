@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\EventsController;
 use App\Http\Controllers\ContactController;
+use App\Http\Controllers\AdminFormController;
 
 // HOME ROUTES
 Route::get('/', [HomeController::class, 'index'])->name('index');
@@ -22,3 +23,5 @@ Route::get('events', [EventsController::class, 'index'])->name('events');
 Route::get('contact', [ContactController::class, 'index'])->name('contact');
 Route::post('contact', [ContactController::class, 'create'])->name('contact.store');
 
+// ADMIN Form Route
+Route::get('admin/form', [AdminFormController::class, 'index'])->name('admin.form');
