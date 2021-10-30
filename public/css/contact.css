@@ -73,6 +73,7 @@
     min-width: 60%;
     /* height: 100vh; */
     max-width: 1024px;
+    /* outline: 2px solid black; */
   }
   
   #contactForm a {
