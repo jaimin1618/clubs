@@ -33,6 +33,8 @@ $(() => { // console.log('adminForm.js ready!');
     $.fn.ajaxConfig();
     $.fn.getClubs();
 
+    const URL = '/events/image';
+    let form = $('#form')[0];
     $('#eventForm').on('submit', (e) => { e.preventDefault();
         $('#status').empty();
         
@@ -56,7 +58,14 @@ $(() => { // console.log('adminForm.js ready!');
                 if (given < curr) {
                     msg.push('Enter valid date, you have provided previous(past) date');
                 }
-            } else if (key === 'image') {
+            } else if (key === 'text') {
+                if (val.length < 10) {
+                    msg.push('Event description must be more than 10 character long');
+                }
+            } else if (key === 'level') {
+                val = parseInt(val, 10);
+            }
+            /* else if (key === 'image') {
                 let l = val.name.split('.');
                 let ext = l[l.length - 1];
                 if (ext === 'jpg' || ext === 'png' || ext === 'jpeg') {
@@ -64,11 +73,7 @@ $(() => { // console.log('adminForm.js ready!');
                 } else {
                     msg.push('Please enter valid image file (jpg, jpeg, png)');
                 }
-            } else if (key === 'text') {
-                if (val.length < 10) {
-                    msg.push('Event description must be more than 10 character long');
-                }
-            }
+            } */
         }
 
         if  (msg.length > 0) {
@@ -81,33 +86,55 @@ $(() => { // console.log('adminForm.js ready!');
             });
         } else {
 
+            let object = {};
+            for (let [key, val] of data) {
+                object[key] = val;
+            }
+
             $.ajax({
                 url: '/events/add',
                 type: 'POST',
                 dataType: 'json',
+                data: object,
                 success: (data) => {
-                    console.log(data);
-
+                    if (data) {
+                        $('#status')
+                        .empty()
+                        .append(
+                        `<div class="alert alert-success">
+                            <b>Success!</b>
+                            <small>Your event has been created</small>
+                        </div>`
+                        );
+                    } else {
+                        $('#status')
+                        .empty()
+                        .append(
+                        `<div class="alert alert-warning">
+                            <b>Error!</b>
+                            <small>There was some problem with network connection</small>
+                        </div>`
+                        );
+                    }
+              
                 },
-                error: (err) => {
-                    console.log(err);
-
+                error: (err) => {                    
+                    $('#status')
+                    .empty()
+                    .append(
+                        `<div class="alert alert-danger">
+                            <small>There was some problem with network</small>
+                            <small>Try again, later</small>
+                        </div>`
+                    );
                 }
             });
-
-
-            // $('#status').append(
-            //     `<div class="alert alert-success">
-            //         <small>${m}</small>
-            //     </div>`
-            // );
         }
-
     });
 
 }); // DOMLoaded
 
-// CLUB_ID => integer 0, 1, ...
+// CLUB_NAME => integer 0, 1, ...
 // EVENT_DATA => DATA_FORMAT => 2021-10-27
 // EVENT_TIME => TIME_FORMAT => 01:45
 // EVENT_NAME => string

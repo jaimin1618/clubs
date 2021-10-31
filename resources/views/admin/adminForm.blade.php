@@ -12,10 +12,9 @@
     <h1 style = "color: #f45702">Event Registration Form</h1>
 </div>
 <div class="container-fluid">
-<form class="adminForm" id="eventForm">
+<form class="adminForm" id="eventForm" action="{{ route('events.add') }}" enctype="multipart/form-data" method="POST">
 
     <div id="status"></div>
-    
 
     <label>Select The Club</label><br>
         <select name="club" id="dropable" class = "form-control" required>
@@ -35,7 +34,11 @@
 <div class="row" style="margin-top: 1rem;">
     <div class="col-lg-6">
         <label>Event Name</label>
-        <input name="name" type = "text" class = "eventName form-control" placeholder="Event Name" required>
+        <input name="name" type="text" class = "eventName form-control" placeholder="Event Name" required>
+    </div>
+
+    <div>
+        <input name="created_by" type="hidden" class="eventName form-control" required value="@auth{{Auth()->user()->name}}@endauth">
     </div>
     
     <div class="col-lg-5 offset-lg-1">
@@ -54,53 +57,41 @@
 
 <div class="row" style="margin-top:1.5rem">
 
-<div class="col-lg-6">
-<label>Event Poster</label><br>
-    <input name="image" type="file" class = "eventposter" id ="eventposter" 
-       src="" required>
-       {{-- multiple --}}
+    {{-- <div class="col-lg-6">
+        <label>Event Poster</label><br>
+            <input name="image" type="file" class = "eventposter" id ="eventposter" src="" required>
+    </div> --}}
+
+    <div class="col-lg-5 offset-lg-1">
+        <label>Description</label>
+        <textarea name="text" type="text" class = "Description form-control" style = "resize: none;" placeholder="About Event" required></textarea><br> 
+    </div>
+
+    <div class="row" style="margin-top: 2rem; margin-left:0.1rem;">
+        <div class="col-lg-8">
+            <label>Will you provide a certificate?</label><br>
+        </div>
+
+        <div class="col-lg-4" style="display: flex;">
+            <div class="form-check form-check-inline">
+                <input name="certificate"  class="form-check-input " type="radio" id="inlineRadio1" value="1" required>
+                <label class="form-check-label" for="inlineRadio1">Yes</label>
+            </div>
+            
+            <div class="form-check form-check-inline"> 
+                <input name="certificate" class="form-check-input " type="radio" id="inlineRadio2" value="0">
+                <label class="form-check-label" for="inlineRadio2">No</label>
+            </div>
+        </div>
+    </div>
 </div>
 
-<div class="col-lg-5 offset-lg-1">
-
-  <label>Description</label>
-    <textarea name="text" type = "text" class = "Description form-control" style = "resize: none;" placeholder="About Event" required
-    ></textarea><br> 
-
-</div>
-
-
-
-
-<div class="row" style="margin-top: 2rem; margin-left:0.1rem;">
-
-<div class="col-lg-8">
-    <label>Will you provide a certificate?</label><br>
-</div>
-
-<div class="col-lg-4" style="display: flex;">
- 
-<div class="form-check form-check-inline">
-    
-    <input name="certificate"  class="form-check-input " type="radio" id="inlineRadio1" value="1" required>
-    <label class="form-check-label" for="inlineRadio1">Yes</label>
-  </div>
-  
-  <div class="form-check form-check-inline"> 
-    <input name="certificate" class="form-check-input " type="radio" id="inlineRadio2" value="0">
-    <label class="form-check-label" for="inlineRadio2">No</label>
-  </div>
-</div>
-</div>
-</div>
-<div style = "display: flex; justify-content: center;align-items: center; margin-top: 1.2rem;" class = "submit">
-    <button class = "submit form-control" id = "submit" >Submit</button>
-</div>
+    <div style = "display: flex; justify-content: center;align-items: center; margin-top: 1.2rem;" class = "submit">
+        <button class = "submit form-control" id = "submit" >Submit</button>
+    </div>
 </form>
 </div>
 </main>   
-
-
 
 @section('js')
     <script type="text/javascript" src={{ asset('js/adminForm.js') }}></script>

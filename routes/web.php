@@ -19,6 +19,8 @@ Auth::routes(['verify' => true]);
 // EVENT ROUTES
 Route::get('events', [EventsController::class, 'index'])->name('events');
 Route::post('events/add', [EventsController::class, 'addEvent'])->name('events.add');
+Route::get('events/show', [EventsController::class, 'displayEvents'])->name('events.show');
+// Route::post('events/image', [EventsController::class, 'imageUpload'])->name('events.image');
 
 // CONTACT ROUTES
 Route::get('contact', [ContactController::class, 'index'])->name('contact');
